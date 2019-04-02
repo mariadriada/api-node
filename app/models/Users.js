@@ -8,27 +8,22 @@ const UserSchema = new mongoose.Schema({
     },
     name: {
         type: String,
-        unique: true,
         required: true
     },
     lastname: {
         type: String,
-        unique: true,
         required: true
     },
     email:  {
         type: String,
+        unique: true,
         required: true,
     },
     phone: {
         type: Number,
         required: true,
     },
-    address: {
-        type: String,
-        unique: true,
-        required: true
-    }
+    address: []
 })
 
 const User = mongoose.model('Users', UserSchema)
