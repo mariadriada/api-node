@@ -17,8 +17,12 @@
     "url": "https://github.com/mariadriada/api-node/issues"
   },
   "homepage": "https://github.com/mariadriada/api-node#readme",
-  "devDependencies": {
-    "express": "^4.16.4",
+  "devDependencies": {    
     "nodemon": "^1.18.10"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "body-parser": "^1.18.3",
+    "mongoose": "^5.4.20"
   }
 }
