@@ -1,33 +1,31 @@
 const mongoose = require('mongoose')
-const User = require('./users')
+const User = require('./Users')
+
 
 const OrderSchema = new mongoose.Schema({
-    id: {
+    id_order: {
         type: Number,
         unique: true,
         required: true
     },
     user: { 
-        type: Schema.Types.ObjectId, 
-        ref: "User" 
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: User
     }, 
     delivery_address: {
         type: String,
-        unique: true,
         required: true
     },
     time_slot: {
         type: String,
-        unique: true,
         required: true
     },
-    email:  {
-        type: String,
-        required: true,
+    delivery_date: {
+        type: Date,
+        required: true
     },
-    phone: {
-        type: Number,
-        required: true,
+    driver:  {
+        type: String
     }
 })
 
