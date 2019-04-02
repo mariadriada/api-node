@@ -11,12 +11,12 @@ const OrderSchema = new mongoose.Schema({
         type: Schema.Types.ObjectId, 
         ref: "User" 
     }, 
-    name: {
+    delivery_address: {
         type: String,
         unique: true,
         required: true
     },
-    lastname: {
+    time_slot: {
         type: String,
         unique: true,
         required: true
