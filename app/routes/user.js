@@ -1,7 +1,5 @@
 const express = require('express')
 const UserCtr = require('../controllers/UsersController')
-
-
 const Router = express.Router()
 
 Router
@@ -19,7 +17,6 @@ Router
                             UserCtr.update)
     //Delete a uer
     .delete('/:key/:value', UserCtr.find, 
-                            UserCtr.remove) 
-    
+                            UserCtr.remove)    
 
 module.exports = Router

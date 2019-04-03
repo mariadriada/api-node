@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
 const User = require('./Users')
 
-
 const OrderSchema = new mongoose.Schema({
     id_order: {
         type: Number,

@@ -1,8 +1,6 @@
 const express = require('express')
 const OrderCtr = require('../controllers/OrdersController')
 const OperationCtr = require('../controllers/OperationsController')
-
-
 const Router = express.Router()
 
 Router
@@ -20,7 +18,6 @@ Router
                             OrderCtr.update)
     //Delete one order
     .delete('/:key/:value', OrderCtr.find, 
-                            OrderCtr.remove) 
-    
-
+                            OrderCtr.remove)  
+                             
 module.exports = Router
