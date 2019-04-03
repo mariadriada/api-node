@@ -1,4 +1,6 @@
-
+/*
+* CRUD Orders controller 
+*/
 
 const Order = require('../models/Orders')
 const Database = require('../config/database')
@@ -31,16 +33,15 @@ function getForField(req, res) {
 }
 
 // Create a order
-async function create(req, res) {
+async function create(req, res, next) {
     Database.connect();
 
-    let order = new Order(req.body)
-    console.log('order ', order)
-    await order.save()
-    .then(order => res.status(201).send({order}))
-    .catch(error => res.status(500).send({error}))
-
-    // When order is created it close the database connecection
+    let order = new Order(req.body)     
+    req.body.order = order
+    // Send to generate aleatory driver and save order
+    await next()
+    
+    // When finish transaction close the database connection
     Database.close()     
 }
 
