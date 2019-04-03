@@ -5,7 +5,6 @@
 const User = require('../models/Users')
 const Database = require('../config/database')
 
-
 // Find all users
 async function getAll(req, res) {    
     Database.connect();
@@ -16,13 +15,13 @@ async function getAll(req, res) {
         return res.status(204).send('NO CONTENT')
     }).catch(error => res.status(500).send(error))
     
-    // When data is transfer it close the database connecection
+    // When data is transfer it close the database connection
     Database.close()        
 }
 
 // Find user(s) for a specific field
 function getForField(req, res) {   
-    // close the database connecection
+    // close the database connection
     Database.close()     
    
     const error = req.body.error;
@@ -42,7 +41,7 @@ async function create(req, res) {
     .then(user => res.status(201).send({user}))
     .catch(error => res.status(500).send({error}))
 
-    // When user is created it close the database connecection
+    // When user is created it close the database connection
     Database.close()     
 }
 
@@ -58,7 +57,7 @@ async function update(req, res) {
         .then(user => res.status(200).send({message: 'UPDATED', user}))
         .catch(error => res.status(500).send({error}))
 
-    // close the database connecection
+    // close the database connection
     Database.close() 
 }
 
@@ -73,7 +72,7 @@ async function remove(req, res) {
         .then(user => res.status(200).send({message: 'REMOVED', user}))
         .catch(error => res.status(500).send({error}))
         
-    // When user is deleted it close the database connecection
+    // When user is deleted it close the database connection
     Database.close()  
 }
 

@@ -10,10 +10,10 @@ App.use(bodyParser.json())
 // Request only json
 App.use(bodyParser.urlencoded({extended:false}))
 // Set URL to user
-App.use('/user', User)
+App.use('/users', User)
 // Set URL to order
-App.use('/order', Order)
+App.use('/orders', Order)
 // Set URL to operation
-App.use('/task', Operation)
+App.use('/tasks', Operation)
 
 module.exports = App
