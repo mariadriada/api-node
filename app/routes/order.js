@@ -11,10 +11,13 @@ Router
     .get('/:key/:value',    OrderCtr.find,  
                             OrderCtr.getForField) 
     //Create one new order
-    .post('/', OrderCtr.create, OperationCtr.assignRandomDriver) 
+    .post('/',  OrderCtr.create, 
+                OperationCtr.validateTimeSlot,  
+                OperationCtr.assignRandomDriver) 
 
     // Update order
-    .put('/:key/:value',    OrderCtr.find, 
+    .put('/:key/:value',    OrderCtr.find,
+                            OperationCtr.validateTimeSlot, 
                             OrderCtr.update)
     //Delete one order
     .delete('/:key/:value', OrderCtr.find, 

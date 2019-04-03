@@ -16,13 +16,13 @@ async function getAll(req, res) {
         return res.status(204).send('NO CONTENT')
     }).catch(error => res.status(500).send(error))
     
-    // When data is transfer it close the database connecection
+    // When data is transfer it close the database connection
     Database.close()        
 }
 
 // Find order(s) for a specific field
 function getForField(req, res) {   
-    // close the database connecection
+    // close the database connection
     Database.close()     
    
     const error = req.body.error;
@@ -33,16 +33,11 @@ function getForField(req, res) {
 }
 
 // Create a order
-async function create(req, res, next) {
-    Database.connect();
-
-    let order = new Order(req.body)     
-    req.body.order = order
+function create(req, res, next) {
+    let orders = new Order(req.body)     
+    req.body.orders = orders
     // Send to generate aleatory driver and save order
-    await next()
-    
-    // When finish transaction close the database connection
-    Database.close()     
+    next() 
 }
 
 // Update data order
@@ -72,7 +67,7 @@ async function remove(req, res) {
         .then(order => res.status(200).send({message: 'REMOVED', order}))
         .catch(error => res.status(500).send({error}))
         
-    // When order is deleted it close the database connecection
+    // When order is deleted it close the database connection
     Database.close()  
 }
 
