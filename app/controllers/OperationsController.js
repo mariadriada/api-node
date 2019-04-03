@@ -3,6 +3,7 @@
 */
 
 const Order = require('../models/Orders')
+const Database = require('../config/database')
 
 // List of active drivers
 let drivers = [
@@ -31,15 +32,21 @@ function assignRandomDriver(req, res) {
 }
 
 // Endpoint to return list of task to driver
-function getTaskDriver(req, res) {
+async function getTaskDriver(req, res) {
+
+    Database.connect();
 
     //Find orders to driver and date requested
-    Order.find(req.body)
+    await Order.find(req.body)
     .then((tasks) => {
         if (tasks.length) return res.status(200).send(tasks)        
         return res.status(204).send('NO CONTENT')        
     })
     .catch(error => res.status(500).send(error))
+
+    // close the database connection
+    Database.close()     
+   
 }
 
 
