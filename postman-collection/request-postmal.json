@@ -260,15 +260,15 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "localhost:3000/order/id_order/49",
+					"raw": "localhost:3000/orders/id_order/50",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"order",
+						"orders",
 						"id_order",
-						"49"
+						"50"
 					]
 				},
 				"description": "Request to delete one order"
