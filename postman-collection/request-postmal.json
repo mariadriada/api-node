@@ -1,0 +1,312 @@
+{
+	"info": {
+		"_postman_id": "2e896a15-ad9e-4b02-8954-f4c27dce6b2f",
+		"name": "api-node request",
+		"description": "Request for test enpints of api-node",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create an user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id_user\": 1248,\n\t\"name\": \"Yudy\",\n\t\"lastname\": \"Giraldo\",\n\t\"email\": \"e55li@gmail.com\",\n\t\"phone\": 3104036850,\n\t\"address\": [\"calle 76 dc 86-40\", \"calle 1 45-25\"]\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				},
+				"description": "Request to create an user.\n\nThe JSON object is sended in the body of request"
+			},
+			"response": []
+		},
+		{
+			"name": "Find user(s) for a field",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/users/name/Maria 2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"name",
+						"Maria 2"
+					]
+				},
+				"description": "Request to find item(s) for a field specific"
+			},
+			"response": []
+		},
+		{
+			"name": "Update data user",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Kristina\",\n\t\"lastname\": \"Forero\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/users/id_user/128",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"id_user",
+						"128"
+					]
+				},
+				"description": "Update data of an user"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete one user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/users/id_user/128",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"id_user",
+						"128"
+					]
+				},
+				"description": "Delete one user"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/orders",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"orders"
+					]
+				},
+				"description": "Request to get all orders"
+			},
+			"response": []
+		},
+		{
+			"name": "Create an order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id_order\": 92,\n\t\"user\": \"5ca3ab77c301814e98522633\",\n\t\"delivery_address\": \"calle 76 dc 86-40\",\n\t\"time_slot\": \"12-14\",\n\t\"delivery_date\": \"2019-04-02\"\n}\n"
+				},
+				"url": {
+					"raw": "localhost:3000/orders",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"orders"
+					]
+				},
+				"description": "request to create an order"
+			},
+			"response": []
+		},
+		{
+			"name": "Get order(s) for a specific field",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/orders/id_order/66",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"orders",
+						"id_order",
+						"66"
+					]
+				},
+				"description": "Request to get order for a specific field"
+			},
+			"response": []
+		},
+		{
+			"name": "Update data of order",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"delivery_address\": \"calle 76 dc 84-40\",\n\t\"time_slot\": \"10-12\"\n}\n"
+				},
+				"url": {
+					"raw": "localhost:3000/orders/id_order/66",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"orders",
+						"id_order",
+						"66"
+					]
+				},
+				"description": "Request to update data of an order\t"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete one order",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/order/id_order/49",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"order",
+						"id_order",
+						"49"
+					]
+				},
+				"description": "Request to delete one order"
+			},
+			"response": []
+		},
+		{
+			"name": "Find one driver tasks ",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"delivery_date\": \"2019-04-02\",\n\t\"driver\": \"InspectOrderCtr3\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/tasks",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks"
+					]
+				},
+				"description": "Find tasks of a specific driver"
+			},
+			"response": []
+		}
+	]
+}
